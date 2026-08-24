@@ -20,7 +20,7 @@ Cole o prompt abaixo em um projeto novo do Lovable.
 
 ---
 
-Crie uma landing page de alto padrão, em português do Brasil, para o empreendimento imobiliário **SKYGLASSES** — uma torre residencial envidraçada à beira-mar, comercializada pela imobiliária **Imob22**. O objetivo único da página é levar o visitante a chamar a imobiliária no WhatsApp.
+Crie uma landing page de alto padrão, em português do Brasil, para o empreendimento imobiliário **SKYGLASSES** — uma torre residencial envidraçada à beira-mar, comercializada pela imobiliária **SKYHOUSES IMÓVEIS**. O objetivo único da página é levar o visitante a chamar a imobiliária no WhatsApp.
 
 Stack: Vite + React + TypeScript + Tailwind CSS + Framer Motion.
 
@@ -47,7 +47,7 @@ Acabamento: textura de grão em ruído SVG a 5% em `mix-blend-mode: overlay` sob
 
 Um portal em tela cheia com três estados:
 
-1. **Aguardando** — o vídeo `/media/skyglasses-intro.mp4` roda mudo, em loop, com `blur(10px)` e `brightness(0.5)`. Por cima: o rótulo "Imob22 apresenta", o título **SKYGLASSES** entrando com o letter-spacing animando de `0.18em` para `-0.055em` ao longo de 1,7s, o subtítulo em serifa itálica dourada, e um botão circular de play com dois anéis pulsando em defasagem, sob o texto "Toque em qualquer lugar para começar". **A tela inteira é clicável.**
+1. **Aguardando** — o vídeo `/media/skyglasses-intro.mp4` roda mudo, em loop, com `blur(10px)` e `brightness(0.5)`. Por cima: o rótulo "SKYHOUSES IMÓVEIS apresenta", o título **SKYGLASSES** entrando com o letter-spacing animando de `0.18em` para `-0.055em` ao longo de 1,7s, o subtítulo em serifa itálica dourada, e um botão circular de play com dois anéis pulsando em defasagem, sob o texto "Toque em qualquer lugar para começar". **A tela inteira é clicável.**
 
 2. **Reproduzindo** — ao clicar em qualquer ponto: o vídeo volta ao início, ganha som, e o blur e o escurecimento saem em 1,5s. Toda a interface de convite sai com fade + blur. Aparecem uma barra de progresso fina dourada e um botão discreto "Pular introdução". Se o navegador bloquear o áudio, volte para mudo em vez de travar a entrada.
 

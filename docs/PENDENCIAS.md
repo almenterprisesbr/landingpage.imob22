@@ -6,8 +6,7 @@ Tudo abaixo está no site com valor **provisório**. Cada item aparece marcado c
 
 | # | Item | Onde entra |
 |---|---|---|
-| 0 | **O nome do empreendimento: SKYGLASSES ou SKY HOUSES?** | A placa nos renders enviados diz **SKY HOUSES**; o briefing diz **SKYGLASSES**. O site inteiro usa SKYGLASSES. Um nome errado na landing page derruba a credibilidade na primeira olhada — **isto precisa ser resolvido antes de qualquer outra coisa.** |
-| 1 | **Número do WhatsApp da Imob22** | `brand.whatsapp` — sem ele, nenhum botão da página funciona |
+| 1 | **Número do WhatsApp da SKYHOUSES IMÓVEIS** | `brand.whatsapp` — sem ele, nenhum botão da página funciona |
 | 2 | **Fotos e renders do prédio** | `public/img/` — hoje o site usa reservas em degradê |
 | 3 | **Endereço completo** (rua, bairro, cidade) | `localizacao.address` |
 | 4 | **CRECI da imobiliária** | `brand.creci` — exigência legal |

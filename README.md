@@ -1,6 +1,6 @@
 # SKYGLASSES — Landing Page
 
-Landing page imersiva do empreendimento **SKYGLASSES**, comercializado pela **Imob22**.
+Landing page imersiva do empreendimento **SKYGLASSES**, comercializado pela **SKYHOUSES IMÓVEIS**.
 Objetivo único da página: fazer o visitante **chamar a imobiliária no WhatsApp**.
 
 ## A experiência

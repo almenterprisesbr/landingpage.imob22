@@ -4,8 +4,8 @@
 
 | | |
 |---|---|
-| **Nome** | SKYGLASSES ⚠️ *(os renders dizem "SKY HOUSES" — confirmar)* |
-| **Comercialização** | Imob22 |
+| **Nome do empreendimento** | SKYGLASSES |
+| **Comercialização** | SKYHOUSES IMÓVEIS |
 | **Tipologia** | Residencial vertical, alto padrão |
 | **Característica** | Torre envidraçada à beira-mar |
 

@@ -11,7 +11,7 @@
 export const brand = {
   name: "SKYGLASSES",
   tagline: "Onde o céu encontra o mar",
-  imobiliaria: "Imob22",
+  imobiliaria: "SKYHOUSES IMÓVEIS",
   // PENDENTE: número real da imobiliária (formato internacional, só dígitos)
   whatsapp: "5511999999999",
   whatsappMessage:
@@ -48,7 +48,7 @@ export const gate = {
   videoSrc: "/media/skyglasses-intro.mp4",
   // PENDENTE: poster = 1º frame do vídeo, evita tela preta no carregamento
   poster: "/img/gate-poster.jpg",
-  eyebrow: "Imob22 apresenta",
+  eyebrow: "SKYHOUSES IMÓVEIS apresenta",
   title: "SKYGLASSES",
   subtitle: "Uma experiência à beira-mar",
   cta: "Toque em qualquer lugar para começar",
@@ -267,19 +267,19 @@ export const depoimentos = {
     {
       quote:
         "Do primeiro contato à entrega das chaves, a equipe conduziu tudo com clareza. Nunca fiquei sem resposta.",
-      author: "Cliente Imob22",
+      author: "Cliente SKYHOUSES IMÓVEIS",
       role: "Comprador",
     },
     {
       quote:
         "Fizemos várias visitas até achar a planta certa. Em nenhum momento houve pressa ou pressão para fechar.",
-      author: "Cliente Imob22",
+      author: "Cliente SKYHOUSES IMÓVEIS",
       role: "Investidora",
     },
     {
       quote:
         "A parte de documentação e financiamento era o que mais me assustava, e foi justamente onde mais me ajudaram.",
-      author: "Cliente Imob22",
+      author: "Cliente SKYHOUSES IMÓVEIS",
       role: "Primeiro imóvel",
     },
   ],
@@ -294,7 +294,7 @@ export const contato = {
   title: "Vamos marcar",
   titleAccent: "a sua visita",
   description:
-    "Preencha o formulário ou chame no WhatsApp. Um corretor da Imob22 responde e organiza a visita ao stand no melhor horário para você.",
+    "Preencha o formulário ou chame no WhatsApp. Um corretor da SKYHOUSES IMÓVEIS responde e organiza a visita ao stand no melhor horário para você.",
   whatsappCta: "Chamar no WhatsApp",
   formCta: "Quero ser contatado",
   interesses: [
@@ -303,7 +303,7 @@ export const contato = {
     "Quero agendar uma visita ao stand",
   ],
   disclaimer:
-    "Ao enviar, você concorda em ser contatado pela Imob22 sobre este empreendimento.",
+    "Ao enviar, você concorda em ser contatado pela SKYHOUSES IMÓVEIS sobre este empreendimento.",
 } as const;
 
 /* ------------------------------------------------------------------ */
