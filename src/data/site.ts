@@ -109,40 +109,25 @@ export const manifesto = {
 /* ------------------------------------------------------------------ */
 
 export const unidades = {
-  eyebrow: "Plantas",
-  title: "Encontre a sua",
-  titleAccent: "planta ideal",
+  eyebrow: "A Planta",
+  title: "Dois quartos,",
+  titleAccent: "nenhum desperdício",
   description:
-    "Unidades entregues com acabamento de alto padrão e possibilidade de personalização de interiores.",
-  // PENDENTE: metragens, número de vagas e valores reais de tabela
-  items: [
-    {
-      id: "tipo-a",
-      name: "Tipo A — 2 quartos com suíte",
-      area: "A confirmar",
-      badge: "Mais procurada",
-      image: "/img/planta-tipo-a.jpg",
-      features: [
-        "2 quartos, sendo 1 suíte",
-        "Closet",
-        "Sala integrada com cozinha americana",
-        "Varanda com vista",
-      ],
-    },
-    {
-      id: "tipo-b",
-      name: "Tipo B — 2 suítes",
-      area: "A confirmar",
-      badge: "Alto padrão",
-      image: "/img/planta-tipo-b.jpg",
-      features: [
-        "2 quartos, ambos suítes",
-        "Closet",
-        "Sala ampliada com cozinha americana",
-        "Varanda gourmet",
-      ],
-    },
-  ],
+    "Uma única tipologia, desenhada até o fim. Sem metro quadrado sobrando em corredor, sem cômodo que ninguém usa.",
+  // PENDENTE: metragem, número de vagas e valor de tabela
+  planta: {
+    id: "tipo-unico",
+    name: "2 quartos com suíte",
+    area: "Metragem a confirmar",
+    badge: "Tipologia única",
+    image: "/img/planta-tipo-a.jpg",
+    features: [
+      "2 quartos, sendo 1 suíte",
+      "Closet",
+      "Sala integrada com cozinha americana",
+      "Varanda com vista",
+    ],
+  },
   highlights: [
     "Cozinha americana",
     "Closet",
@@ -313,9 +298,9 @@ export const contato = {
   whatsappCta: "Chamar no WhatsApp",
   formCta: "Quero ser contatado",
   interesses: [
-    "Tipo A — 2 quartos com suíte",
-    "Tipo B — 2 suítes",
-    "Ainda não sei, quero orientação",
+    "Quero conhecer a planta",
+    "Quero saber valores e condições",
+    "Quero agendar uma visita ao stand",
   ],
   disclaimer:
     "Ao enviar, você concorda em ser contatado pela Imob22 sobre este empreendimento.",

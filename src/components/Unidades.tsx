@@ -1,12 +1,9 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
 import { unidades, whatsappUrl } from "@/data/site";
 import { Figure } from "./ui/Figure";
 import { Reveal, RevealWords } from "./ui/Reveal";
 
 export function Unidades() {
-  const [active, setActive] = useState(0);
-  const current = unidades.items[active];
+  const { planta } = unidades;
 
   return (
     <section id="plantas" className="relative bg-ink-2 py-28 sm:py-40">
@@ -23,75 +20,50 @@ export function Unidades() {
           </Reveal>
         </div>
 
-        {/* Seletor de planta */}
         <Reveal delay={0.2}>
-          <div className="mt-14 flex flex-wrap gap-3">
-            {unidades.items.map((item, i) => (
-              <button
-                key={item.id}
-                type="button"
-                onClick={() => setActive(i)}
-                className={`rounded-full border px-6 py-3 font-display text-[0.8rem] transition-all duration-500 ease-smooth ${
-                  i === active
-                    ? "border-gold bg-gold text-ink"
-                    : "border-sand/20 text-mist hover:border-gold/50 hover:text-gold"
-                }`}
+          <div className="mt-14 grid gap-px overflow-hidden rounded-xl2 border border-sand/10 bg-sand/10 lg:grid-cols-2">
+            <Figure
+              src={planta.image}
+              alt={`Planta ${planta.name}`}
+              className="min-h-[340px] bg-ink lg:min-h-[560px]"
+              label={`Planta — ${planta.name}`}
+            />
+
+            <div className="flex flex-col justify-center bg-ink px-8 py-14 sm:px-12">
+              <span className="w-fit rounded-full border border-gold/40 px-4 py-1.5 font-display text-[0.6rem] uppercase tracking-label text-gold">
+                {planta.badge}
+              </span>
+
+              <h3 className="mt-7 font-display text-4xl font-medium leading-tight tracking-tightest text-sand">
+                {planta.name}
+              </h3>
+
+              <p className="mt-3 font-serif text-xl italic text-gold">
+                {planta.area}
+              </p>
+
+              <ul className="mt-10 space-y-4">
+                {planta.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-4">
+                    <span className="mt-2 h-px w-6 shrink-0 bg-gold/60" />
+                    <span className="text-[0.95rem] text-sand/85">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={whatsappUrl(
+                  "Olá! Quero conhecer a planta de 2 quartos com suíte do SKYGLASSES."
+                )}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-gold mt-12 w-fit"
               >
-                {item.name}
-              </button>
-            ))}
+                Quero conhecer a planta
+              </a>
+            </div>
           </div>
         </Reveal>
-
-        {/* Painel da planta ativa */}
-        <motion.div
-          key={current.id}
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-10 grid gap-px overflow-hidden rounded-xl2 border border-sand/10 bg-sand/10 lg:grid-cols-2"
-        >
-          <Figure
-            src={current.image}
-            alt={`Planta ${current.name}`}
-            className="min-h-[340px] bg-ink lg:min-h-[520px]"
-            label={`Planta — ${current.name}`}
-          />
-
-          <div className="flex flex-col justify-center bg-ink px-8 py-12 sm:px-12">
-            <span className="w-fit rounded-full border border-gold/40 px-4 py-1.5 font-display text-[0.6rem] uppercase tracking-label text-gold">
-              {current.badge}
-            </span>
-
-            <h3 className="mt-7 font-display text-3xl font-medium leading-tight tracking-tightest text-sand">
-              {current.name}
-            </h3>
-
-            <p className="mt-3 font-serif text-xl italic text-gold">
-              {current.area}
-            </p>
-
-            <ul className="mt-9 space-y-4">
-              {current.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-4">
-                  <span className="mt-2 h-px w-6 shrink-0 bg-gold/60" />
-                  <span className="text-[0.95rem] text-sand/85">{feature}</span>
-                </li>
-              ))}
-            </ul>
-
-            <a
-              href={whatsappUrl(
-                `Olá! Quero saber mais sobre a planta "${current.name}" do SKYGLASSES.`
-              )}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-gold mt-11 w-fit"
-            >
-              Quero esta planta
-            </a>
-          </div>
-        </motion.div>
       </div>
 
       {/* Faixa de destaques em movimento contínuo */}

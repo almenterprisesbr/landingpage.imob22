@@ -6,6 +6,7 @@ Tudo abaixo está no site com valor **provisório**. Cada item aparece marcado c
 
 | # | Item | Onde entra |
 |---|---|---|
+| 0 | **O nome do empreendimento: SKYGLASSES ou SKY HOUSES?** | A placa nos renders enviados diz **SKY HOUSES**; o briefing diz **SKYGLASSES**. O site inteiro usa SKYGLASSES. Um nome errado na landing page derruba a credibilidade na primeira olhada — **isto precisa ser resolvido antes de qualquer outra coisa.** |
 | 1 | **Número do WhatsApp da Imob22** | `brand.whatsapp` — sem ele, nenhum botão da página funciona |
 | 2 | **Fotos e renders do prédio** | `public/img/` — hoje o site usa reservas em degradê |
 | 3 | **Endereço completo** (rua, bairro, cidade) | `localizacao.address` |
@@ -15,8 +16,8 @@ Tudo abaixo está no site com valor **provisório**. Cada item aparece marcado c
 
 | # | Item | Situação atual |
 |---|---|---|
-| 5 | Metragem das unidades | "A confirmar" |
-| 6 | São **duas** plantas (Tipo A e Tipo B) ou só uma? | Duas modeladas |
+| 5 | Metragem da unidade | "A confirmar" |
+| 6 | Existe mais de uma tipologia? | Modelada **uma só**: 2 quartos com suíte |
 | 7 | Número de vagas de garagem | Não está no site |
 | 8 | Distância real até a praia | "100m" (chute) |
 | 9 | Fase da obra e previsão de entrega | Não está no site |
@@ -35,7 +36,7 @@ Tudo abaixo está no site com valor **provisório**. Cada item aparece marcado c
 ## Fotos necessárias
 
 **Do prédio**
-- [ ] Fachada completa (dia e fim de tarde)
+- [x] ~~Fachada completa~~ — **dois renders enviados no chat, mas não chegaram como arquivo.** Reenviar como anexo `.jpg` para entrarem no repositório.
 - [ ] Hall de entrada
 - [ ] Vista da varanda / vista do mar
 
@@ -50,9 +51,9 @@ Tudo abaixo está no site com valor **provisório**. Cada item aparece marcado c
 - [ ] Piscina adulto · [ ] Piscina e área kids · [ ] Cinema
 - [ ] Salão de festas · [ ] Mercado · [ ] Área recreativa
 
-**Plantas** — imagem ou PDF de cada tipologia
+**Planta** — imagem ou PDF da tipologia de 2 quartos com suíte
 
-> Se alguma dessas imagens ainda não existir, dá para **gerar renders** para ocupar o lugar enquanto o material oficial não chega. Basta pedir. Renders gerados devem sair do ar assim que a foto real existir, e todo material ilustrativo já está coberto pelo aviso legal no rodapé.
+> **Geração por IA — indisponível no momento.** A conta Higgsfield ligada a esta sessão está no plano gratuito, com **10 créditos** e sem cota de gerações ilimitadas. Não dá para gerar as ~10 imagens necessárias. Para destravar: adicionar créditos na conta, ou enviar as fotos/renders reais. Se renders gerados forem usados, devem sair do ar assim que a foto real existir — o aviso legal do rodapé já cobre material ilustrativo.
 
 ## Nomes dos arquivos
 
@@ -60,7 +61,7 @@ Ao enviar as imagens, salve em `public/img/` com estes nomes exatos — o site j
 
 ```
 fachada-principal.jpg      gate-poster.jpg          og-skyglasses.jpg
-planta-tipo-a.jpg          planta-tipo-b.jpg
+planta-tipo-a.jpg
 lazer-piscina.jpg          lazer-cinema.jpg         lazer-salao-festas.jpg
 lazer-kids.jpg             lazer-mercado.jpg        lazer-recreativa.jpg
 localizacao-mapa.jpg

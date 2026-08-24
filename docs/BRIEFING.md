@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Nome** | SKYGLASSES |
+| **Nome** | SKYGLASSES ⚠️ *(os renders dizem "SKY HOUSES" — confirmar)* |
 | **Comercialização** | Imob22 |
 | **Tipologia** | Residencial vertical, alto padrão |
 | **Característica** | Torre envidraçada à beira-mar |
@@ -16,7 +16,7 @@
 - **1 closet**
 - Varanda
 
-> Duas tipologias estão modeladas no site (Tipo A — 2 quartos com suíte; Tipo B — 2 suítes). **Confirmar com o cliente** se ambas existem ou se há apenas uma planta. Ver `PENDENCIAS.md`.
+> O site trabalha com **uma única tipologia**. Uma planta só, apresentada em destaque, comunica melhor que um seletor com duas opções quase idênticas — e é o que o briefing descreve. Se houver mais tipologias, o seletor volta.
 
 ### Área de lazer
 
@@ -55,7 +55,7 @@ Sofisticado sem ser pomposo. Frases curtas. Português do Brasil, tratamento por
 | 0 | **Portal de vídeo** | Prende a atenção e cria o momento de imersão |
 | 1 | **Hero** | Nome, promessa, números, primeiro CTA |
 | 2 | **Manifesto** | Por que este prédio existe — os 3 pilares |
-| 3 | **Plantas** | Tipologias, com CTA por planta |
+| 3 | **Planta** | A tipologia em destaque, com CTA próprio |
 | 4 | **Lazer** | Mosaico editorial das 6 áreas |
 | 5 | **Galeria** | Fotos e renders, com lightbox |
 | 6 | **Localização** | Endereço e pontos de interesse próximos |
