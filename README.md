@@ -1,46 +1,52 @@
 # SKYGLASSES — Landing Page
 
-Landing page imersiva do empreendimento **SKYGLASSES**, comercializado pela **SKYHOUSES IMÓVEIS**.
-Objetivo único da página: fazer o visitante **chamar a imobiliária no WhatsApp**.
+Landing page imersiva do **SKYGLASSES**, residencial em construção na Barra Sul,
+Balneário Camboriú, comercializado pela **Sky Imobiliária**.
 
-## A experiência
+Objetivo único: fazer o visitante **chamar a imobiliária no WhatsApp**.
 
-1. **Portal de vídeo** — a página abre com o vídeo do empreendimento rodando mudo, desfocado, em loop. A tela inteira é clicável.
-2. **Um clique em qualquer lugar** reinicia o vídeo com som, em tela cheia, com barra de progresso e opção de pular.
-3. **Ao terminar (ou pular)**, a cortina se abre, a rolagem é liberada e o site entra em cena — cada seção com sua própria animação de entrada.
+## A experiência de entrada
 
-A rolagem fica travada até o portal se abrir, garantindo que ninguém pule a introdução por acidente.
+1. **O vídeo roda sozinho.** Ao abrir a página, o tour do empreendimento toca em tela cheia, mudo, sem pedir clique.
+2. **Congela no último quadro.** O vídeo para na tomada frontal da torre e o wordmark abre a partir do centro: `SKY` à esquerda, `GLASSES` à direita, com a torre no corredor entre eles.
+3. **Um painel creme sobe e toma a tela.** Depois de uma batida de 1,5 s — ou assim que a pessoa rola, toca ou aperta uma tecla — um painel de cantos arredondados sobe do rodapé, se alarga até as bordas e descobre o conteúdo de baixo para cima.
+
+A rolagem fica travada até o painel terminar de subir. O painel e a primeira seção
+da página têm o mesmo fundo e o mesmo layout, então a troca no fim é invisível.
+
+O corte do vídeo é proposital: o original termina com um letreiro "SKY HOUSE" em
+9,85 s, e o site corta em 9,8 s para montar o nome correto em HTML.
 
 ## Stack
 
 Vite · React 18 · TypeScript · Tailwind CSS · Framer Motion
 
-Escolhida deliberadamente por ser **a mesma stack nativa do Lovable** — o código migra praticamente 1:1.
+A mesma stack nativa do Lovable — o código migra praticamente 1:1.
 
 ## Rodando localmente
 
 ```bash
 npm install
 npm run dev      # http://localhost:5173
-npm run build    # gera dist/
+npm run build
 ```
 
 ## Onde mexer
 
 | O que | Onde |
 |---|---|
-| **Todo o texto, telefone e caminho das imagens** | `src/data/site.ts` |
+| **Todo texto, telefone e caminho de imagem** | `src/data/site.ts` |
 | Cores, fontes, animações | `tailwind.config.ts` + `src/index.css` |
-| Vídeo de abertura | `public/media/skyglasses-intro.mp4` |
-| Fotos e renders | `public/img/` |
-| Seções da página | `src/components/` |
+| A introdução (vídeo, congelamento, painel) | `src/components/Intro.tsx` |
+| Vídeos | `public/media/` |
+| Renders | `public/img/` |
+| Regerar renders a partir do vídeo | `./scripts/extrair-frames.sh <video.mp4>` |
 
-> Para atualizar o conteúdo do site você só precisa editar **`src/data/site.ts`**. Nenhum componente precisa ser tocado.
+> Para atualizar o conteúdo, edite **só** `src/data/site.ts`.
 
 ## Documentação
 
-- [`docs/BRIEFING.md`](docs/BRIEFING.md) — o empreendimento, o público, a estratégia da página
+- [`docs/BRIEFING.md`](docs/BRIEFING.md) — empreendimento, público, estratégia
 - [`docs/DESIGN-SYSTEM.md`](docs/DESIGN-SYSTEM.md) — cores, tipografia, movimento
-- [`docs/PENDENCIAS.md`](docs/PENDENCIAS.md) — **o que ainda falta o cliente enviar**
-- [`docs/PROMPT-LOVABLE.md`](docs/PROMPT-LOVABLE.md) — prompt pronto para recriar o site no Lovable
-- [`docs/referencias-visuais.pdf`](docs/referencias-visuais.pdf) — referências enviadas pelo cliente
+- [`docs/PENDENCIAS.md`](docs/PENDENCIAS.md) — **o que falta o cliente enviar**
+- [`docs/PROMPT-LOVABLE.md`](docs/PROMPT-LOVABLE.md) — prompt pronto para o Lovable

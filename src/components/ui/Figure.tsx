@@ -1,10 +1,6 @@
 import { useState } from "react";
 
-/**
- * Imagem com degradê de reserva.
- * Enquanto as fotos oficiais do prédio não chegam, o lugar da imagem
- * continua com aparência acabada em vez de quebrar o layout.
- */
+/** Imagem com reserva em degradê, caso o arquivo ainda não exista. */
 export function Figure({
   src,
   alt,
@@ -22,22 +18,13 @@ export function Figure({
 
   if (failed) {
     return (
-      <div
-        className={`relative grain overflow-hidden bg-ink-3 ${className}`}
-        role="img"
-        aria-label={alt}
-      >
+      <div className={`relative grain overflow-hidden bg-ink-3 ${className}`} role="img" aria-label={alt}>
         <div
           className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(135deg, #131B2B 0%, #1B2436 45%, #2A2418 100%)",
-          }}
+          style={{ background: "linear-gradient(135deg,#1A1F26 0%,#23282F 50%,#2E2519 100%)" }}
         />
         <div className="absolute inset-0 flex items-center justify-center px-6">
-          <span className="text-center font-display text-[0.6rem] uppercase tracking-label text-sand/35">
-            {label ?? alt}
-          </span>
+          <span className="eyebrow text-center text-cream/35">{label ?? alt}</span>
         </div>
       </div>
     );

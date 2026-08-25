@@ -8,3 +8,6 @@ dist-ssr
 !.env.example
 *.log
 .vite
+
+# Artefato incremental do TypeScript
+*.tsbuildinfo

@@ -5,9 +5,15 @@
 | | |
 |---|---|
 | **Nome do empreendimento** | SKYGLASSES |
-| **Comercialização** | SKYHOUSES IMÓVEIS |
+| **Comercialização** | Sky Imobiliária |
+| **Local** | Barra Sul, Balneário Camboriú/SC |
+| **Status** | Em construção · entrega prevista para 2028 |
 | **Tipologia** | Residencial vertical, alto padrão |
 | **Característica** | Torre envidraçada à beira-mar |
+
+> O prédio **ainda não existe**. Isso muda o argumento de venda: não se vende um
+> imóvel pronto, vende-se a escolha — quem chega agora escolhe andar, vista e
+> posição, e entra pelo valor de lançamento.
 
 ### Unidades
 

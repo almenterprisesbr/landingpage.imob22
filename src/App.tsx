@@ -1,42 +1,40 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Contato } from "./components/Contato";
-import { Depoimentos } from "./components/Depoimentos";
+import { Edificio } from "./components/Edificio";
 import { Footer } from "./components/Footer";
-import { Galeria } from "./components/Galeria";
-import { Hero } from "./components/Hero";
+import { Intro } from "./components/Intro";
 import { Lazer } from "./components/Lazer";
 import { Localizacao } from "./components/Localizacao";
-import { Manifesto } from "./components/Manifesto";
 import { Nav } from "./components/Nav";
-import { Unidades } from "./components/Unidades";
-import { VideoGate } from "./components/VideoGate";
+import { Obra } from "./components/Obra";
+import { Opening } from "./components/Opening";
+import { Planta } from "./components/Planta";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
 
 export default function App() {
-  // O site só é montado depois que o portal de vídeo se abre —
-  // assim a primeira animação de cada seção acontece com o usuário olhando.
+  // A página só é montada quando o painel da introdução termina de subir.
+  // Assim a primeira animação de cada seção acontece com o usuário olhando.
   const [entered, setEntered] = useState(false);
 
   return (
     <>
-      <VideoGate onEnter={() => setEntered(true)} />
+      <Intro onDone={() => setEntered(true)} />
 
       <AnimatePresence>
         {entered ? (
           <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.4 }}
           >
             <Nav />
-            <Hero />
-            <Manifesto />
-            <Unidades />
+            <Opening />
+            <Edificio />
+            <Planta />
             <Lazer />
-            <Galeria />
+            <Obra />
             <Localizacao />
-            <Depoimentos />
             <Contato />
             <Footer />
             <WhatsAppFloat />

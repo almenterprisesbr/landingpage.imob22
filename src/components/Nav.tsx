@@ -16,18 +16,24 @@ export function Nav() {
   return (
     <motion.header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-smooth ${
-        scrolled ? "bg-ink/80 backdrop-blur-xl border-b border-sand/10" : ""
+        scrolled ? "border-b border-cream/10 bg-ink/80 backdrop-blur-xl" : ""
       }`}
       initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 1, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
     >
-      <nav className="container flex items-center justify-between py-5">
-        <a
-          href="#topo"
-          className="font-display text-sm font-semibold tracking-[0.22em] text-sand"
-        >
-          {brand.name}
+      <nav
+        className={`container flex items-center justify-between py-5 transition-colors duration-700 ${
+          scrolled ? "text-cream" : "text-ink"
+        }`}
+      >
+        <a href="#abertura" className="flex items-baseline gap-2.5">
+          <span className="font-display text-sm font-bold tracking-[0.2em]">
+            {brand.building}
+          </span>
+          <span className="hidden font-display text-[0.6rem] tracking-label opacity-45 sm:inline">
+            {brand.city}
+          </span>
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
@@ -35,7 +41,7 @@ export function Nav() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-display text-[0.78rem] text-mist transition-colors duration-500 hover:text-gold"
+                className="font-display text-[0.78rem] opacity-60 transition-opacity duration-500 hover:opacity-100"
               >
                 {link.label}
               </a>
@@ -48,7 +54,7 @@ export function Nav() {
             href={whatsappUrl()}
             target="_blank"
             rel="noreferrer"
-            className="btn-gold hidden !px-6 !py-2.5 sm:inline-flex"
+            className={`btn hidden !px-6 !py-2.5 sm:inline-flex ${scrolled ? "bg-gold text-ink hover:bg-gold-soft" : "bg-ink text-cream hover:bg-ink-3"}`}
           >
             Falar com corretor
           </a>
@@ -61,12 +67,12 @@ export function Nav() {
             className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
           >
             <span
-              className={`h-px w-6 bg-sand transition-transform duration-500 ${
+              className={`h-px w-6 bg-current transition-transform duration-500 ${
                 open ? "translate-y-[3.5px] rotate-45" : ""
               }`}
             />
             <span
-              className={`h-px w-6 bg-sand transition-transform duration-500 ${
+              className={`h-px w-6 bg-current transition-transform duration-500 ${
                 open ? "-translate-y-[3.5px] -rotate-45" : ""
               }`}
             />
@@ -74,9 +80,8 @@ export function Nav() {
         </div>
       </nav>
 
-      {/* Menu mobile */}
       <motion.div
-        className="overflow-hidden border-t border-sand/10 bg-ink/95 backdrop-blur-xl lg:hidden"
+        className="overflow-hidden border-t border-ink/10 bg-cream lg:hidden"
         initial={false}
         animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -87,19 +92,14 @@ export function Nav() {
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block py-3 font-display text-lg text-sand transition-colors hover:text-gold"
+                className="block py-3 font-display text-lg text-ink transition-colors hover:text-gold-deep"
               >
                 {link.label}
               </a>
             </li>
           ))}
           <li className="pt-4">
-            <a
-              href={whatsappUrl()}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-gold w-full"
-            >
+            <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="btn-ink w-full">
               Falar com corretor
             </a>
           </li>

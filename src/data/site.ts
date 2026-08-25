@@ -4,23 +4,22 @@
  * Todo texto, número e caminho de imagem do site vive aqui.
  * Para atualizar o site, edite este arquivo — nenhum componente precisa ser tocado.
  *
- * Os campos marcados com "// PENDENTE" usam valores provisórios
- * até o cliente confirmar. Veja docs/PENDENCIAS.md.
+ * Campos marcados com "// PENDENTE" usam valores provisórios. Ver docs/PENDENCIAS.md.
  */
 
 export const brand = {
-  name: "SKYGLASSES",
+  building: "SKYGLASSES",
+  company: "Sky Imobiliária",
   tagline: "Onde o céu encontra o mar",
-  imobiliaria: "SKYHOUSES IMÓVEIS",
+  city: "Balneário Camboriú · SC",
   // PENDENTE: número real da imobiliária (formato internacional, só dígitos)
-  whatsapp: "5511999999999",
+  whatsapp: "5547999999999",
   whatsappMessage:
     "Olá! Vi a página do SKYGLASSES e quero saber mais sobre os apartamentos.",
-  // PENDENTE: telefone, e-mail, endereço do stand e CRECI
-  phoneDisplay: "(11) 99999-9999",
-  email: "contato@imob22.com.br",
-  standAddress: "Stand de vendas — endereço a confirmar",
-  creci: "CRECI 000000-J",
+  // PENDENTE: dados reais de contato e CRECI
+  phoneDisplay: "(47) 99999-9999",
+  email: "contato@skyimobiliaria.com.br",
+  creci: "CRECI/SC 00000-J",
   instagram: "https://instagram.com/",
 } as const;
 
@@ -32,202 +31,152 @@ export const whatsappUrl = (message: string = brand.whatsappMessage) =>
 /* ------------------------------------------------------------------ */
 
 export const navLinks = [
-  { label: "O Empreendimento", href: "#empreendimento" },
-  { label: "Plantas", href: "#plantas" },
+  { label: "O Edifício", href: "#edificio" },
+  { label: "A Planta", href: "#planta" },
   { label: "Lazer", href: "#lazer" },
-  { label: "Galeria", href: "#galeria" },
+  { label: "A Obra", href: "#obra" },
   { label: "Localização", href: "#localizacao" },
   { label: "Contato", href: "#contato" },
 ] as const;
 
 /* ------------------------------------------------------------------ */
-/* Portal de entrada (vídeo imersivo)                                  */
+/* Introdução — vídeo que roda sozinho e congela                       */
 /* ------------------------------------------------------------------ */
 
-export const gate = {
-  videoSrc: "/media/skyglasses-intro.mp4",
-  // PENDENTE: poster = 1º frame do vídeo, evita tela preta no carregamento
-  poster: "/img/gate-poster.jpg",
-  eyebrow: "SKYHOUSES IMÓVEIS apresenta",
-  title: "SKYGLASSES",
-  subtitle: "Uma experiência à beira-mar",
-  cta: "Toque em qualquer lugar para começar",
-  skip: "Pular introdução",
+export const intro = {
+  video: "/media/skyglasses-intro.mp4",
+  videoMobile: "/media/skyglasses-intro-mobile.mp4",
+  poster: "/img/intro-poster.jpg",
+  /** O wordmark abre em duas metades, flanqueando a torre. */
+  markLeft: "SKY",
+  markRight: "GLASSES",
+  eyebrow: "Sky Imobiliária apresenta",
+  location: "Barra Sul · Balneário Camboriú",
+  hint: "Role para entrar",
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Hero (revelado após o vídeo)                                        */
+/* Abertura do painel creme                                            */
 /* ------------------------------------------------------------------ */
 
-export const hero = {
-  eyebrow: "Alto padrão à beira-mar",
-  titleLines: ["Viver alto", "é viver"],
-  titleAccent: "leve",
+export const opening = {
+  eyebrow: "Em construção",
+  title: "Um endereço que",
+  titleAccent: "ainda vai existir",
   description:
-    "Apartamentos de 2 quartos com suíte, sala com cozinha americana e closet. Um edifício de vidro desenhado para emoldurar o mar em cada amanhecer.",
-  primaryCta: "Falar com um corretor",
-  secondaryCta: "Conhecer o empreendimento",
-  // PENDENTE: foto/render principal do prédio
-  image: "/img/fachada-principal.jpg",
+    "O SKYGLASSES está saindo do chão na quadra mais disputada da Barra Sul. Quem chega agora escolhe andar, vista e posição — e entra pelo valor de lançamento.",
   stats: [
-    { value: 2, suffix: "", label: "Quartos com suíte" },
-    { value: 8, suffix: "+", label: "Áreas de lazer" },
-    { value: 100, suffix: "m", label: "Do mar" }, // PENDENTE: distância real
+    { value: "02", label: "Quartos" },
+    { value: "01", label: "Suíte com closet" },
+    { value: "06", label: "Áreas de lazer" },
+    { value: "2028", label: "Entrega prevista" },
   ],
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Manifesto                                                           */
+/* O edifício                                                          */
 /* ------------------------------------------------------------------ */
 
-export const manifesto = {
-  eyebrow: "O Empreendimento",
-  title: "Mais que",
-  titleAccent: "quatro paredes",
+export type Shot = { src: string; caption: string; span?: "wide" };
+
+export const edificio = {
+  eyebrow: "O Edifício",
+  title: "Tudo o que você precisa.",
+  titleAccent: "Nada pedindo nada de você.",
   paragraphs: [
-    "O SKYGLASSES nasceu de uma pergunta simples: e se a casa fosse tão generosa quanto a vista? Cada planta foi desenhada de dentro para fora — do closet que organiza a rotina à cozinha americana que integra a sala e transforma o jantar em encontro.",
-    "Vidro, luz e mar. Uma arquitetura que não compete com a paisagem: ela se abre para ela.",
+    "Uma torre de vidro desenhada para a luz do fim de tarde. As varandas avançam sobre o mar, e a fachada devolve o horizonte para dentro de casa.",
+    "Cada apartamento nasceu da mesma pergunta: o que sobra quando se tira o excesso? A resposta está na planta — circulação curta, ambientes integrados, armazenamento resolvido.",
   ],
   pillars: [
     {
-      title: "Arquitetura de vidro",
-      text: "Fachada envidraçada que amplia a entrada de luz natural e devolve o mar para dentro de casa.",
+      n: "01",
+      title: "Fachada envidraçada",
+      text: "Vidro do piso ao teto em toda a face voltada para o mar.",
     },
     {
-      title: "Plantas inteligentes",
-      text: "Cada metro pensado para o uso real: circulação limpa, espaços integrados e armazenamento resolvido.",
+      n: "02",
+      title: "Varandas profundas",
+      text: "Espaço real para mesa, espreguiçadeira e a vista aberta.",
     },
     {
-      title: "Lazer completo",
-      text: "Cinema, piscinas, salão de festas e mercado. A rotina inteira resolvida dentro do condomínio.",
+      n: "03",
+      title: "Rooftop coroado",
+      text: "O último pavimento entrega o melhor ângulo da orla.",
     },
   ],
+  gallery: [
+    { src: "/img/torre-frontal.jpg", caption: "Fachada frontal ao entardecer", span: "wide" },
+    { src: "/img/torre-entardecer.jpg", caption: "Volumetria e varandas" },
+    { src: "/img/torre-aerea.jpg", caption: "Implantação e entorno" },
+    { src: "/img/living-interior.jpg", caption: "Living integrado", span: "wide" },
+    { src: "/img/living-vista-mar.jpg", caption: "Living com vista mar" },
+    { src: "/img/varanda-suite.jpg", caption: "Varanda e vista" },
+  ] satisfies Shot[],
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Plantas / Unidades                                                  */
+/* A planta                                                            */
 /* ------------------------------------------------------------------ */
 
-export const unidades = {
+export const planta = {
   eyebrow: "A Planta",
   title: "Dois quartos,",
   titleAccent: "nenhum desperdício",
   description:
-    "Uma única tipologia, desenhada até o fim. Sem metro quadrado sobrando em corredor, sem cômodo que ninguém usa.",
-  // PENDENTE: metragem, número de vagas e valor de tabela
-  planta: {
-    id: "tipo-unico",
-    name: "2 quartos com suíte",
-    area: "Metragem a confirmar",
-    badge: "Tipologia única",
-    image: "/img/planta-tipo-a.jpg",
-    features: [
-      "2 quartos, sendo 1 suíte",
-      "Closet",
-      "Sala integrada com cozinha americana",
-      "Varanda com vista",
-    ],
-  },
-  highlights: [
-    "Cozinha americana",
-    "Closet",
-    "Suíte",
-    "Varanda",
-    "Vista mar",
-    "Interiores personalizáveis",
+    "Uma tipologia só, desenhada até o fim. Sem metro quadrado sobrando em corredor, sem cômodo que ninguém usa.",
+  // PENDENTE: metragem e vagas — hoje tratadas como "sob consulta" de propósito,
+  // porque é o que leva o visitante a abrir conversa com o corretor.
+  areaLabel: "Metragem sob consulta",
+  image: "/img/living-interior.jpg",
+  features: [
+    { label: "2 quartos", detail: "sendo 1 suíte" },
+    { label: "Closet", detail: "integrado à suíte" },
+    { label: "Sala ampla", detail: "com cozinha americana" },
+    { label: "Varanda", detail: "voltada para o mar" },
   ],
+  cta: "Ver a planta completa",
 } as const;
 
 /* ------------------------------------------------------------------ */
 /* Lazer                                                               */
 /* ------------------------------------------------------------------ */
 
-export type Amenity = {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  icon: string;
-  span?: "wide" | "tall";
-};
-
 export const lazer = {
-  eyebrow: "Área de Lazer",
-  title: "Um condomínio que",
+  eyebrow: "Lazer",
+  title: "O condomínio",
   titleAccent: "resolve o seu dia",
   description:
     "Do café da manhã ao cinema da noite, tudo acontece a poucos passos da sua porta.",
+  featured: { src: "/img/piscina-deck.jpg", caption: "Deck e piscina" },
   items: [
-    {
-      id: "piscina",
-      name: "Piscina adulto",
-      description:
-        "Lâmina d'água com deck solarium e vista aberta para o horizonte.",
-      image: "/img/lazer-piscina.jpg",
-      icon: "waves",
-      span: "wide",
-    },
-    {
-      id: "cinema",
-      name: "Cinema",
-      description: "Sala privativa com projeção e poltronas reclináveis.",
-      image: "/img/lazer-cinema.jpg",
-      icon: "clapperboard",
-    },
-    {
-      id: "salao",
-      name: "Salão de festas",
-      description: "Ambiente amplo e equipado para receber sem sair de casa.",
-      image: "/img/lazer-salao-festas.jpg",
-      icon: "party",
-    },
-    {
-      id: "kids",
-      name: "Piscina e área kids",
-      description:
-        "Espaço seguro e supervisionável, com piscina infantil e brinquedoteca.",
-      image: "/img/lazer-kids.jpg",
-      icon: "kids",
-      span: "tall",
-    },
-    {
-      id: "mercado",
-      name: "Mercado",
-      description: "Mercado autônomo 24h dentro do condomínio.",
-      image: "/img/lazer-mercado.jpg",
-      icon: "cart",
-    },
-    {
-      id: "recreativa",
-      name: "Área recreativa",
-      description:
-        "Espaço de convivência ao ar livre para esporte, lazer e descanso.",
-      image: "/img/lazer-recreativa.jpg",
-      icon: "trees",
-      span: "wide",
-    },
-  ] satisfies Amenity[],
+    { n: "01", name: "Piscina", text: "Lâmina d'água com deck solarium e vista aberta." },
+    { n: "02", name: "Cinema", text: "Sala privativa com projeção e poltronas reclináveis." },
+    { n: "03", name: "Salão de festas", text: "Ambiente equipado para receber sem sair de casa." },
+    { n: "04", name: "Mercado", text: "Mercado autônomo 24h dentro do condomínio." },
+    { n: "05", name: "Área recreativa", text: "Convivência ao ar livre para esporte e descanso." },
+    { n: "06", name: "Espaço kids", text: "Piscina infantil e brinquedoteca em área supervisionável." },
+  ],
 } as const;
 
 /* ------------------------------------------------------------------ */
-/* Galeria                                                             */
+/* A obra                                                              */
 /* ------------------------------------------------------------------ */
 
-export const galeria = {
-  eyebrow: "Galeria",
-  title: "O SKYGLASSES",
-  titleAccent: "por dentro",
+export const obra = {
+  eyebrow: "A Obra",
+  title: "Acompanhe de perto",
+  titleAccent: "cada laje",
   description:
-    "Imagens meramente ilustrativas do empreendimento e das áreas comuns.",
-  // PENDENTE: substituir pelas fotos e renders oficiais do prédio
-  images: [
-    { src: "/img/galeria-01.jpg", caption: "Fachada ao entardecer" },
-    { src: "/img/galeria-02.jpg", caption: "Living integrado" },
-    { src: "/img/galeria-03.jpg", caption: "Suíte principal" },
-    { src: "/img/galeria-04.jpg", caption: "Varanda com vista mar" },
-    { src: "/img/galeria-05.jpg", caption: "Deck da piscina" },
-    { src: "/img/galeria-06.jpg", caption: "Hall de entrada" },
+    "O SKYGLASSES está em construção. Comprar agora significa escolher a melhor unidade e entrar pelo valor de lançamento — antes da valorização de entrega.",
+  image: "/img/torre-aerea.jpg",
+  // PENDENTE: percentuais e datas reais do cronograma da obra
+  phases: [
+    { label: "Fundação", status: "Concluída" },
+    { label: "Estrutura", status: "Em andamento" },
+    { label: "Alvenaria e instalações", status: "A iniciar" },
+    { label: "Acabamento e entrega", status: "Previsto para 2028" },
   ],
+  cta: "Quero o book completo da obra",
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -236,52 +185,21 @@ export const galeria = {
 
 export const localizacao = {
   eyebrow: "Localização",
-  title: "A poucos passos",
-  titleAccent: "da areia",
-  // PENDENTE: endereço completo, bairro/cidade e link do Google Maps
-  address: "Endereço a confirmar",
+  title: "Barra Sul,",
+  titleAccent: "Balneário Camboriú",
+  // PENDENTE: endereço real do empreendimento — este é fictício, a pedido do cliente
+  address: "Av. Atlântica, 2.800 — Barra Sul, Balneário Camboriú/SC",
   description:
-    "Uma região que combina o silêncio da orla com a conveniência de ter tudo por perto.",
-  image: "/img/localizacao-mapa.jpg",
-  mapsUrl: "https://maps.google.com/",
-  // PENDENTE: distâncias reais
+    "A quadra mais valorizada da cidade: a orla de um lado, a estrutura completa do centro do outro.",
+  image: "/img/fachada-rua.jpg",
+  mapsUrl: "https://www.google.com/maps/place/Balne%C3%A1rio+Cambori%C3%BA,+SC",
+  // PENDENTE: distâncias reais após confirmação do endereço
   pois: [
-    { label: "Praia", distance: "A confirmar" },
-    { label: "Supermercado", distance: "A confirmar" },
-    { label: "Escolas", distance: "A confirmar" },
-    { label: "Farmácia e serviços", distance: "A confirmar" },
-    { label: "Restaurantes", distance: "A confirmar" },
-  ],
-} as const;
-
-/* ------------------------------------------------------------------ */
-/* Depoimentos                                                         */
-/* ------------------------------------------------------------------ */
-
-// PENDENTE: depoimentos reais de clientes da imobiliária (com autorização de uso)
-export const depoimentos = {
-  eyebrow: "Quem já comprou com a gente",
-  title: "A confiança de quem",
-  titleAccent: "encontrou o lugar certo",
-  items: [
-    {
-      quote:
-        "Do primeiro contato à entrega das chaves, a equipe conduziu tudo com clareza. Nunca fiquei sem resposta.",
-      author: "Cliente SKYHOUSES IMÓVEIS",
-      role: "Comprador",
-    },
-    {
-      quote:
-        "Fizemos várias visitas até achar a planta certa. Em nenhum momento houve pressa ou pressão para fechar.",
-      author: "Cliente SKYHOUSES IMÓVEIS",
-      role: "Investidora",
-    },
-    {
-      quote:
-        "A parte de documentação e financiamento era o que mais me assustava, e foi justamente onde mais me ajudaram.",
-      author: "Cliente SKYHOUSES IMÓVEIS",
-      role: "Primeiro imóvel",
-    },
+    { label: "Praia Central", distance: "120 m" },
+    { label: "Barra Sul e Molhe", distance: "700 m" },
+    { label: "Av. Brasil", distance: "900 m" },
+    { label: "Balneário Shopping", distance: "2,4 km" },
+    { label: "Parque Unipraias", distance: "1,6 km" },
   ],
 } as const;
 
@@ -291,19 +209,20 @@ export const depoimentos = {
 
 export const contato = {
   eyebrow: "Fale com a gente",
-  title: "Vamos marcar",
-  titleAccent: "a sua visita",
+  title: "Vamos escolher",
+  titleAccent: "a sua unidade",
   description:
-    "Preencha o formulário ou chame no WhatsApp. Um corretor da SKYHOUSES IMÓVEIS responde e organiza a visita ao stand no melhor horário para você.",
+    "As melhores posições saem primeiro. Chame no WhatsApp e um corretor da Sky Imobiliária apresenta as unidades disponíveis, os valores de lançamento e as condições de pagamento.",
   whatsappCta: "Chamar no WhatsApp",
   formCta: "Quero ser contatado",
   interesses: [
-    "Quero conhecer a planta",
+    "Quero ver as unidades disponíveis",
     "Quero saber valores e condições",
-    "Quero agendar uma visita ao stand",
+    "Quero visitar o stand de vendas",
+    "Estou avaliando como investimento",
   ],
   disclaimer:
-    "Ao enviar, você concorda em ser contatado pela SKYHOUSES IMÓVEIS sobre este empreendimento.",
+    "Ao enviar, você concorda em ser contatado pela Sky Imobiliária sobre este empreendimento.",
 } as const;
 
 /* ------------------------------------------------------------------ */
@@ -312,5 +231,5 @@ export const contato = {
 
 export const footer = {
   legal:
-    "Imagens meramente ilustrativas. Medidas, acabamentos e áreas de lazer sujeitos a alteração conforme memorial descritivo e projeto aprovado pelos órgãos competentes.",
+    "Imagens meramente ilustrativas. Empreendimento em construção. Medidas, acabamentos e áreas de lazer sujeitos a alteração conforme memorial descritivo e projeto aprovado pelos órgãos competentes.",
 } as const;
