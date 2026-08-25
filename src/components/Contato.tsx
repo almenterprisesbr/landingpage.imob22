@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { brand, contato, whatsappUrl } from "@/data/site";
+import { MagneticButton } from "./ui/MagneticButton";
 import { Reveal, RevealWords } from "./ui/Reveal";
 
 const field =
@@ -54,14 +55,14 @@ export function Contato() {
             </Reveal>
 
             <Reveal delay={0.22}>
-              <a
+              <MagneticButton
                 href={whatsappUrl()}
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ink mt-10"
               >
                 {contato.whatsappCta}
-              </a>
+              </MagneticButton>
             </Reveal>
 
             <Reveal delay={0.3}>
@@ -129,9 +130,9 @@ export function Contato() {
                 />
               </div>
 
-              <button type="submit" className="btn-gold mt-7 w-full">
+              <MagneticButton type="submit" className="btn-gold mt-7 w-full justify-center">
                 {contato.formCta}
-              </button>
+              </MagneticButton>
 
               <p className="mt-5 text-center text-[0.72rem] leading-relaxed text-ink/45">
                 {contato.disclaimer}

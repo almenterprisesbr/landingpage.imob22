@@ -10,6 +10,7 @@ import { Nav } from "./components/Nav";
 import { Obra } from "./components/Obra";
 import { Opening } from "./components/Opening";
 import { Planta } from "./components/Planta";
+import { SectionRail } from "./components/ui/SectionRail";
 import { WhatsAppFloat } from "./components/WhatsAppFloat";
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
             <Localizacao />
             <Contato />
             <Footer />
+            <SectionRail />
             <WhatsAppFloat />
           </motion.main>
         ) : null}

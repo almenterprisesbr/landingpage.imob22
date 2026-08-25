@@ -1,4 +1,5 @@
 import { edificio } from "@/data/site";
+import { CursorTag } from "./ui/CursorTag";
 import { Figure } from "./ui/Figure";
 import { Reveal, RevealWords } from "./ui/Reveal";
 
@@ -55,19 +56,21 @@ export function Edificio() {
         <div className="mt-6 grid auto-rows-[240px] grid-cols-1 gap-5 sm:grid-cols-3 sm:auto-rows-[280px]">
           {edificio.gallery.map((shot, i) => (
             <Reveal key={shot.src + i} delay={(i % 3) * 0.09} className={`h-full ${spanClass(shot.span)}`}>
-              <figure className="group relative h-full overflow-hidden rounded-xl2">
-                <Figure
-                  src={shot.src}
-                  alt={shot.caption}
-                  className="absolute inset-0 h-full w-full"
-                  imgClassName="transition-transform duration-[1600ms] ease-smooth group-hover:scale-[1.08]"
-                  label={shot.caption}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent" />
-                <figcaption className="absolute bottom-5 left-6 font-display text-[0.7rem] tracking-wide text-cream/85">
-                  {shot.caption}
-                </figcaption>
-              </figure>
+              <CursorTag label="Ampliar" className="group h-full overflow-hidden rounded-xl2">
+                <figure className="relative h-full">
+                  <Figure
+                    src={shot.src}
+                    alt={shot.caption}
+                    className="absolute inset-0 h-full w-full"
+                    imgClassName="transition-transform duration-[1600ms] ease-smooth group-hover:scale-[1.08]"
+                    label={shot.caption}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent" />
+                  <figcaption className="absolute bottom-5 left-6 font-display text-[0.7rem] tracking-wide text-cream/85">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              </CursorTag>
             </Reveal>
           ))}
         </div>

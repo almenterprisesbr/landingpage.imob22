@@ -71,6 +71,11 @@ export const opening = {
     { value: "06", label: "Áreas de lazer" },
     { value: "2028", label: "Entrega prevista" },
   ],
+  image: "/img/torre-entardecer.jpg",
+  badge: {
+    title: "Em construção",
+    text: "Escolha agora o andar e a posição antes da entrega.",
+  },
 } as const;
 
 /* ------------------------------------------------------------------ */
